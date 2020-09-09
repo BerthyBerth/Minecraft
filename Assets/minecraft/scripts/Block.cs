@@ -36,8 +36,10 @@ public class Block
         GameObject blockGameObject = new GameObject();
         blockGameObject.name = "Block";
         blockGameObject.transform.SetParent(chunk.transform);
+        int scopeBlockNumber;
 
-        if (Convert.ToInt32(this.position.x) + 1 < chunkInstance.blocks.GetLength(1) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x) + 1, Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.x) + 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(1) - 1 && scopeBlockNumber >= 0 &&chunkInstance.GetBlockType(Convert.ToInt32(this.position.x) + 1, Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
         {
             Debug.Log(1);
             planeX[0] = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -47,7 +49,8 @@ public class Block
             planeX[0].transform.localScale = new Vector3(0.10f, 0.10f, 0.10f);
         }
 
-        if (Convert.ToInt32(this.position.x) - 1 < chunkInstance.blocks.GetLength(1) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x) - 1, Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.x) - 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(1) - 1 && scopeBlockNumber >= 0 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x) - 1, Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
         {
             Debug.Log(2);
             planeX[1] = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -57,7 +60,8 @@ public class Block
             planeX[1].transform.localScale = new Vector3(0.10f, 0.10f, 0.10f);
         }
 
-        if (Convert.ToInt32(this.position.y) + 1 < chunkInstance.blocks.GetLength(2) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x), Convert.ToInt32(this.position.y) + 1, Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.y) + 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(2) - 1 && scopeBlockNumber >= 0 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x), Convert.ToInt32(this.position.y) + 1, Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
         {
             Debug.Log(3);
             planeTop = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -67,7 +71,8 @@ public class Block
             planeTop.transform.localScale = new Vector3(0.10f, 0.10f, 0.10f);
         }
 
-        if (Convert.ToInt32(this.position.y) - 1 < chunkInstance.blocks.GetLength(2) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x), Convert.ToInt32(this.position.y) - 1, Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.y) - 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(2) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.x), Convert.ToInt32(this.position.y) - 1, Convert.ToInt32(this.position.z)) != Block.BlockType.Grass)
         {
             Debug.Log(4);
             planeBottom = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -77,7 +82,8 @@ public class Block
             planeBottom.transform.localScale = new Vector3(0.10f, 0.10f, 0.10f);
         }
 
-        if (Convert.ToInt32(this.position.z) - 1 < chunkInstance.blocks.GetLength(3) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.z), Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z) - 1) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.z) - 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(3) - 1 && scopeBlockNumber >= 0 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.z), Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z) - 1) != Block.BlockType.Grass)
         {
             Debug.Log(5);
             planeZ[1] = GameObject.CreatePrimitive(PrimitiveType.Plane);
@@ -87,7 +93,8 @@ public class Block
             planeZ[1].transform.localScale = new Vector3(0.10f, 0.10f, 0.10f);
         }
 
-        if (Convert.ToInt32(this.position.z) + 1 < chunkInstance.blocks.GetLength(3) - 1 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.z), Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z) + 1) != Block.BlockType.Grass)
+        scopeBlockNumber = Convert.ToInt32(this.position.z) + 1;
+        if (scopeBlockNumber < chunkInstance.blocks.GetLength(3) - 1 && scopeBlockNumber >= 0 && chunkInstance.GetBlockType(Convert.ToInt32(this.position.z), Convert.ToInt32(this.position.y), Convert.ToInt32(this.position.z) + 1) != Block.BlockType.Grass)
         {
             Debug.Log(6);
             planeZ[1] = GameObject.CreatePrimitive(PrimitiveType.Plane);
